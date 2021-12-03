@@ -236,7 +236,11 @@ function butRowEdit(but) {
                 input = '<select class="form-control input-sm" >';
 
                 opts.forEach(function (op) {
-                    input += '<option>' + op + '</option>';
+                    if (op == cont) { // Check if op is equal to hidden content, if so then set op to the default value of select
+                     input += '<option selected>' + op + '</option>';
+                    } else {
+                     input += '<option>' + op + '</option>';
+                    }
                 });
                 input += '</select>';
 
